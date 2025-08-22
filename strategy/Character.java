@@ -6,7 +6,7 @@ public abstract class Character {
     protected WeaponBehavior WeaponBehavior;
 
     public Character(String name) {
-
+        this.name = name;
     }
 
     public void attack(){
