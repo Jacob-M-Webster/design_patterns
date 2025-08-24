@@ -1,6 +1,6 @@
 package strategy;
 
 public abstract interface WeaponBehavior {
-    public int speed = 0;
+    public int speed = 100;
     public abstract void attack();
 }

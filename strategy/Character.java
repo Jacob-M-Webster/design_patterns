@@ -10,11 +10,11 @@ public abstract class Character {
     }
 
     public void attack(){
-
+        WeaponBehavior.attack();
     }
 
     public void setWeaponBehavior(WeaponBehavior weaponBehavior) {
-
+        this.WeaponBehavior = weaponBehavior;
     }
 
     public abstract String toString();
