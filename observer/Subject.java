@@ -14,7 +14,7 @@ public abstract class Subject {
     }
 
     public void removeObserver(Observer observer) {
-        observers.add(observer);
+        observers.remove(observer);
     }
 
     public abstract void issueNotice(int note);

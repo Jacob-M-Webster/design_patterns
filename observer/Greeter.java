@@ -5,6 +5,7 @@ public class Greeter extends Subject {
     public void issueNotice(int note) {
         System.out.println("Trumpet fanfair is sounded " + note + " time(s).");
         Trumpet.play(false, note);
+        notifyObservers(note);
     }
 
     @Override

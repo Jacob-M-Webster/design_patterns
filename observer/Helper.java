@@ -1,19 +1,18 @@
 package observer;
 
 public class Helper {
-    public int determineMessage(boolean warning, int note) {
-        int num = 0;
-        if (warning) {
+    public static void determineMessage(boolean warning, int note, Runnable option1,
+    Runnable option2, Runnable option3, Runnable option4) {
+        if (!warning) {
             if (note == 1)
-                num = 1;
-            else if (num == 2)
-                num = 2;
+                option1.run();
+            else if (note == 2)
+                option2.run();
         } else {
             if (note == 1)
-                num = 3;
-            else if (num == 2)
-                num = 4;
+                option3.run();
+            else if (note == 2)
+                option4.run();
         }
-        return num;
     }
 }

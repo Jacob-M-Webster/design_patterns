@@ -5,11 +5,12 @@ public class Watchman extends Subject{
     public void issueNotice(int note) {
         System.out.println("Trumpet is honked " + note + " time(s).");
         Trumpet.play(true, note);
+        notifyObservers(note);
     }
 
     @Override
     public void notifyObservers(int note) {
         for (Observer observer : observers)
-            observer.update(false, note);
+            observer.update(true, note);
     }
 }
