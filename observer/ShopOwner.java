@@ -1,5 +1,8 @@
 package observer;
-
+/**
+ * Shop Owner class | implements oberserver | provides dialogue based on the Subjects
+ * @author Jacob Webster
+ */
 public class ShopOwner implements Observer {
     public ShopOwner(Subject watchman, Subject greeter) {
         watchman.registerObserver(this);

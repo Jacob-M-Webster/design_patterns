@@ -1,5 +1,8 @@
 package observer;
-
+/**
+ * Watchman class which is a child of Subject | Handles un-friendly encounters
+ * @author Jacob Webster
+ */
 public class Watchman extends Subject{
     @Override
     public void issueNotice(int note) {

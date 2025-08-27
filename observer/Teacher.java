@@ -1,5 +1,8 @@
 package observer;
-
+/**
+ * Teacher class | implements oberserver | provides dialogue based on the Subjects
+ * @author Jacob Webster
+ */
 public class Teacher implements Observer {
     public Teacher(Subject watchman, Subject greeter) {
         watchman.registerObserver(this);

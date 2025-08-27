@@ -1,5 +1,8 @@
 package observer;
-
+/**
+ * Helper class to avoid the repetitive if else tree that would be used in determining what dialogue to print
+ * @author Jacob Webster
+ */
 public class Helper {
     public static void determineMessage(boolean warning, int note, Runnable option1,
     Runnable option2, Runnable option3, Runnable option4) {

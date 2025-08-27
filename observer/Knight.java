@@ -1,5 +1,8 @@
 package observer;
-
+/**
+ * Knight class | implements oberserver | provides dialogue based on the Subjects
+ * @author Jacob Webster
+ */
 public class Knight implements Observer {
 
     public Knight(Subject watchman, Subject greeter) {
