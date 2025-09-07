@@ -3,11 +3,10 @@ import java.util.ArrayList;
 
 public abstract class ScoopDecorator extends IceCream{
     protected IceCream iceCream;
-    protected int numFlavorScoops;
-    protected static int globalScoops;
+    protected static int numFlavorScoops = 5;
 
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_BLUE =  "\u001B[34m";
+    protected static final String ANSI_RED = "\u001B[31m";
+    protected static final String ANSI_BLUE =  "\u001B[34m";
     protected static final String ANSI_WHITE = "\u001B[37m";
     protected static final String ANSI_RESET = "\u001B[0m";
 
@@ -19,16 +18,16 @@ public abstract class ScoopDecorator extends IceCream{
 
         for (int i = 0; i < numScoops; ++i) {
             StringBuilder scoop = new StringBuilder();
-            for (int spaces = 0; spaces < 5 - globalScoops; ++spaces)
+            for (int spaces = 0; spaces < 5 - numFlavorScoops; ++spaces)
                 scoop.append(" ");
             scoop.append(colorCode + "(");
-            for (int ii = 0; ii < (globalScoops * 2); ++ii)
+            for (int ii = 0; ii < (numFlavorScoops * 2); ++ii)
                 scoop.append("-");
             scoop.append(")" + ANSI_RESET);
-            asciiArt.add(scoop.toString());
-            ++globalScoops;
+            asciiArt.add(0, scoop.toString());
+            --numFlavorScoops;
         }
 
-        asciiArt.addAll(0, iceCream.asciiArt);
+        this.asciiArt.addAll(iceCream.asciiArt);
     }
 }

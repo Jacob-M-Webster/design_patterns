@@ -1,14 +1,13 @@
 import java.util.ArrayList;
-import java.lang.StringBuilder;
 public class Cone extends IceCream {
 
     private static final String ANSI_BROWN = "\u001B[38;5;130m";
+    protected static final String ANSI_RESET = "\u001B[0m";
     public Cone(){
         ArrayList<String> lines = FileReader.getLines("cone.txt");
         for (String line: lines) {
-            StringBuilder string = new StringBuilder();
-            string.append(ANSI_BROWN).append(line);
-            asciiArt.add(0, line);
+            String coloredLine = ANSI_BROWN + line + ANSI_RESET;
+            asciiArt.add(coloredLine);
         }
     }
 }
