@@ -21,7 +21,7 @@ public class Package {
         return "placeholder";
     }
 
-    public String recieved() {
+    public String received() {
         return "placeholder";
     }
 
@@ -34,6 +34,6 @@ public class Package {
     }
 
     public void getVerb(String singular, String plural){
-        
+
     }
 }
