@@ -7,7 +7,12 @@ public abstract class State {
     protected Random random;
 
     public State(Package pkg) {
+        this.pkg = pkg;
+        this.random = new Random();
+    }
 
+    protected boolean delayRandomizer(int chance) {
+        return ((random.nextInt(100) + 1) <= (chance));
     }
 
     public abstract String getStatus();

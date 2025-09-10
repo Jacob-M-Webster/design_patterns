@@ -8,10 +8,16 @@ public class InTransitState extends State{
     }
 
     public String getStatus() {
-        return "placeholder";
+        return "The " + pkg.getName() + pkg.getVerb(" is", "'s are") + " out for delivery.";
     }
 
     public String getETA() {
-        return "placeholder";
+        int delay = 0;
+        String delayMessage = "";
+        if (delayRandomizer(30)) {
+            delayMessage = "The " + pkg.getName() + pkg.getVerb("", "'s") + " experienced a delay in shipping.\n";
+            delay = random.nextInt(6) + 1;
+        }
+        return delayMessage + "The " + pkg.getName() + pkg.getVerb("", "'s") + " should arrive within " + (5 + delay) + " business days";
     }
 }

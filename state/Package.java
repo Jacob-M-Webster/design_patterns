@@ -11,29 +11,40 @@ public class Package {
     public Package(String name, int quantity) {
         this.name = name;
         this.quantity = quantity;
+
+        orderedState = new OrderedState(this);
+        inTransitState = new InTransitState(this);
+        deliveredState = new DeliveredState(this);
     }
 
     public String order() {
-        return "placeholder";
+        state = orderedState;
+        return state.getStatus() + "\n" + state.getETA();
     }
 
     public String mail() {
-        return "placeholder";
+        state = inTransitState;
+        return state.getStatus() + "\n" + state.getETA();
     }
 
     public String received() {
-        return "placeholder";
+        state = deliveredState;
+        return state.getStatus() + "\n" + state.getETA();
     }
 
     public void setState(State state) {
-
+        this.state = state;
     }
 
     public String getName() {
-        return "placeholder";
+        return this.name;
     }
 
-    public void getVerb(String singular, String plural){
-
+    public String getVerb(String singular, String plural){
+        if (quantity == 1) {
+            return singular;
+        } else {
+            return plural;
+        }
     }
 }

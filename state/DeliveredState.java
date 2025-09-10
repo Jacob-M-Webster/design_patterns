@@ -6,10 +6,10 @@ public class DeliveredState extends State {
     }
 
     public String getStatus() {
-        return "placeholder";
+        return "The " + pkg.getName() + pkg.getVerb(" has", "'s have") + " arrived.";
     }
 
     public String getETA() {
-        return "placeholder";
+        return "The " + pkg.getName() + pkg.getVerb(" is", "'s are") + " here.";
     }
 }
